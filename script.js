@@ -2,21 +2,24 @@ import { updateGround, setupGround } from "./ground.js"
 import { updateDino, setupDino, getDinoRect, setDinoLose } from "./dino.js"
 import { updateCactus, setupCactus, getCactusRects } from "./cactus.js"
 
+let musicPlayed = true; // Prevent music from being played again
+const playMusic = () => {
+  if (!musicPlayed) {
+      backgroundMusic.play().catch(e => console.error("Audio play failed:", e));
+
+
+  }
+
+};
 window.onload = () => {
 
-
-
-  let sound = new Audio('mew.mp3');
   let backgroundMusic = document.getElementById('backgroundMusic');
   backgroundMusic.volume = 0.1; // Set volume to 10%
   let musicPlayed = false; // Flag to check if music has started
-  const playMusic = () => {
-    if (!musicPlayed) {
-        backgroundMusic.play().catch(e => console.error("Audio play failed:", e));
-        musicPlayed = true; // Prevent music from being played again
-    }
-};
-playMusic();
+
+  
+  
+  playMusic();
 }
 
 const WORLD_WIDTH = 100
@@ -87,6 +90,8 @@ function handleStart() {
   setupCactus()
   startScreenElem.classList.add("hide")
   window.requestAnimationFrame(update)
+  musicPlayed = false; // Reset musicPlayed to false
+  playMusic();
 }
 
 function handleLose() {
