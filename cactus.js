@@ -21,12 +21,12 @@ const FOOD_IMAGES = [
   "imgs/food-9.png", 
   "imgs/food-10.png", 
   "imgs/food-11.png",
-   "imgs/food-12.png",
-    "imgs/food-13.png",
-     "imgs/food-14.png",
+  "imgs/food-12.png",
+  "imgs/food-13.png",
+  "imgs/food-14.png",
   "imgs/food-15.png",
-"imgs/food-16.png",
- "imgs/food-17.png",
+  "imgs/food-16.png",
+  "imgs/food-17.png",
 
   // Add more cactus image paths as needed
 ];  

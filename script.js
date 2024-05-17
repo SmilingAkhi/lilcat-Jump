@@ -15,10 +15,10 @@ window.onload = () => {
 
   let backgroundMusic = document.getElementById('backgroundMusic');
   backgroundMusic.volume = 0.1; // Set volume to 10%
-  let musicPlayed = false; // Flag to check if music has started
+  musicPlayed = false; // Flag to check if music has started
 
   
-  
+
   playMusic();
 }
 
@@ -115,6 +115,6 @@ function setPixelToWorldScale() {
     worldToPixelScale = window.innerHeight / WORLD_HEIGHT
   }
 
-  worldElem.style.width = `${WORLD_WIDTH * worldToPixelScale}px`
-  worldElem.style.height = `${WORLD_HEIGHT * worldToPixelScale}px`
+  worldElem.style.minWidth = `${WORLD_WIDTH * worldToPixelScale}px`
+  worldElem.style.minHeight = `${WORLD_HEIGHT * worldToPixelScale}px`
 }
