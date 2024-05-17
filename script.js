@@ -1,13 +1,13 @@
 import { updateGround, setupGround } from "./ground.js"
 import { updateDino, setupDino, getDinoRect, setDinoLose } from "./dino.js"
-import { updateCactus, setupCactus, getCactusRects } from "./cactus.js"
+import { updateCactus, setupCactus, getCactusRects, waitForImagesToLoad } from "./cactus.js"
+
+waitForImagesToLoad()
 
 let musicPlayed = true; // Prevent music from being played again
 const playMusic = () => {
   if (!musicPlayed) {
       backgroundMusic.play().catch(e => console.error("Audio play failed:", e));
-
-
   }
 
 };
@@ -26,6 +26,7 @@ const WORLD_WIDTH = 100
 const WORLD_HEIGHT = 30
 const SPEED_SCALE_INCREASE = 0.00001
 
+const loaderElem = document.querySelector("[data-loader]")
 const worldElem = document.querySelector("[data-world]")
 const scoreElem = document.querySelector("[data-score]")
 const startScreenElem = document.querySelector("[data-start-screen]")

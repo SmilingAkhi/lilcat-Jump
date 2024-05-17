@@ -15,6 +15,7 @@ let dinoFrame;
 let currentFrameTime;
 let yVelocity;
 let sound = new Audio('imgs/mew.mp3');
+
 export function setupDino() {
   isJumping = false;
   dinoFrame = 0;

@@ -31,6 +31,30 @@ const FOOD_IMAGES = [
   // Add more cactus image paths as needed
 ];  
 
+
+const loaderElem = document.querySelector("[data-loader]")
+let loadedImages = 0;
+const imagesElem = document.querySelector("[data-images]")
+
+function imageLoaded() {
+  loadedImages++;
+  if (loadedImages === FOOD_IMAGES.length) {
+    loaderElem.style.display = "none";
+    worldElem.style.display = "block";
+    imagesElem.remove()
+  }
+}
+
+export function waitForImagesToLoad(){
+  FOOD_IMAGES.forEach(imageName => {
+    const img = new Image();
+    img.onload = imageLoaded;
+    img.src = imageName;
+    imagesElem.appendChild(img); // Add images to the content (hidden initially)
+  });
+}
+
+
 let nextCactusTime
 export function setupCactus() {
   nextCactusTime = CACTUS_INTERVAL_MIN
